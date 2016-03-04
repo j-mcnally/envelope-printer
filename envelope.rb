@@ -17,7 +17,7 @@ class Envelope
       spacing = "\n\n\n\n\n\n\n\n"
       indentation = "\t\t\t\t\t"
 
-      address = "#{indentation}#{name}\n#{address1}\n"
+      address = "#{indentation}#{name}\n#{indentation}#{address1}\n"
       address << "#{indentation}#{address2}\n" if !address2.nil?
       address << "#{indentation}#{city}, #{state} #{zipcode}\n"
 
