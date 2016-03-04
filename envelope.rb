@@ -13,7 +13,10 @@ class Envelope
 
       printer = CupsPrinter.new(ENV['PRINTER'])
 
-      kohaddress = "\nKohactive\n800 W. Huron St.\nSuite 3E\nChicago, IL 60642"
+      fromaddress = "\n#{ENV['FROM_NAME']}\n#{ENV['FROM_ADDRESS_1']}"
+      fromaddress << "\n#{ENV['FROM_ADDRESS_2']}" if !ENV['FROM_ADDRESS_2'].nil?
+      fromaddress << "\n#{ENV['FROM_CITY']}, #{ENV['FROM_STATE']} #{ENV['FROM_ZIPCODE']}"
+
       spacing = "\n\n\n\n\n\n\n\n"
       indentation = "\t\t\t\t\t"
 
@@ -21,7 +24,7 @@ class Envelope
       address << "#{indentation}#{address2}\n" if !address2.nil?
       address << "#{indentation}#{city}, #{state} #{zipcode}\n"
 
-      print_text = "#{kohaddress}#{spacing}#{address}"
+      print_text = "#{fromaddress}#{spacing}#{address}"
 
       job = printer.print_data(print_text, 'text/plain', {'landscape' => "yes", 'InputSlot' => ENV['INPUT_SLOT'], 'PageSize' => ENV['PAGE_SIZE']})
 
