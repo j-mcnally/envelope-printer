@@ -3,6 +3,8 @@ require 'sinatra'
 require File.expand_path("../envelope.rb", __FILE__)
 require 'json'
 
+set :port, ENV['PORT'] || 3000
+
 before do
    content_type :json
    headers 'Access-Control-Allow-Origin' => '*',
