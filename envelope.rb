@@ -17,7 +17,7 @@ class Envelope
       address << "#{address2}\n" if !address2.nil?
       address << "#{city}, #{state} #{zipcode}\n"
 
-      job = printer.print_data(address, 'text/plain', {'landscape' => "yes", 'InputSlot' => "ENV['INPUT_SLOT']", 'PageSize' => "ENV['PAGE_SIZE']"})
+      job = printer.print_data(address, 'text/plain', {'landscape' => "yes", 'InputSlot' => ENV['INPUT_SLOT'], 'PageSize' => ENV['PAGE_SIZE']})
 
     end
   end
