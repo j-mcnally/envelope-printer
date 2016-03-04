@@ -41,6 +41,8 @@ post '/envelope' do
       state: params[:state],
       zipcode: params[:zipcode]
     )
+
+    {status: "OK"}.to_json
   else
     # Respond 401
     status(401)
