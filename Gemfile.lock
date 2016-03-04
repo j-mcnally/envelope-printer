@@ -1,0 +1,32 @@
+GIT
+  remote: git://github.com/j-mcnally/cupsffi.git
+  revision: 5d0dbe728f6d7c3d2988aadf64d532c3d8c0c090
+  branch: landscape_support
+  specs:
+    cupsffi (0.1.4)
+      ffi
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+    ffi (1.9.10)
+    json (1.8.3)
+    rack (1.6.4)
+    rack-protection (1.5.3)
+      rack
+    sinatra (1.4.6)
+      rack (~> 1.4)
+      rack-protection (~> 1.4)
+      tilt (>= 1.3, < 3)
+    tilt (2.0.2)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  cupsffi!
+  json
+  sinatra
+
+BUNDLED WITH
+   1.11.2
